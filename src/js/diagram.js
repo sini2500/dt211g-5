@@ -1,6 +1,11 @@
 import Chart from 'chart.js/auto';
 
 /**
+ * Funktioner för diagram
+ * @module diagram
+ */
+
+/**
  * Hämtar JSON från extern källa
  * @returns {Array} lista med utbildningar
  */
