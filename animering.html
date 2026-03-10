@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DT211G - BästKatt</title>
+  <link rel="stylesheet" href="/src/css/style.scss">
+  <script src="/src/js/main.js" type="module" defer></script>
+  <script src="/src/js/animation.js" type="module" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo"><a href="/">BästKatt</a></div>
+
+        <button class="burger">&#x2630;</button>
+
+        <ul class="menu">
+          <li><a href="/">Lab 3</a></li>
+          <li><a href="/sass">SASS</a></li>
+          <li><a href="/animering">Animering</a></li>
+          <li><a href="/diagram">Diagram</a></li>
+          <li><a href="/karta">Karta</a></li>
+          <li id="dark-toggle">🌙</li>
+        </ul>
+
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Animering av html-element</h1>
+    <p>Här är några exempel på transition, transform och keyframes.<br>Jag valde att bara arbeta med bilder eftersom det låter mig behålla katt-temat.</p>
+
+    <section class="anim-demo">
+      <h2>Exempel 1: Katter som snurrar</h2>
+      <p>Knappen kör en javascript-funktion som justerar bildens style.transform attribut.<br>Eftersom bilden ska snurra används transform:rotate(xx deg)<br>Rörelsen tar 0.5 sekunder p.g.a bildens transition-regel.</p>
+
+      <div id="demo1-container">
+        <button id="demo1-run">Snurra katterna</button>
+        <img src="/src/img/circle-cats.png" id="demo1-cat" alt="Katter som snurrar">
+      </div>
+
+    </section>
+
+    <section class="anim-demo">
+      <h2>Exempel 2: Katt som kikar fram</h2>
+      <p>Bilden på katten ligger bakom knappen i z-index. Knappen lägger till en "show" css-klass på elementet.<br>Detta utlöser en transform: translateX(100%); så bilden rör sig sin hela bredd åt höger.<br>Behållaren får även overflow:visible; så kattens öron inte klipps av.<br>Rörelsen tar 0.5 sekunder p.g.a bildens transition-regel.<br>Efter 2 sekunder tas "show" bort, katten glider tillbaka och overflow är hidden igen.</p>
+
+      <div id="demo2-container">
+        <button id="demo2-run">Visa katten</button>
+        <img src="/src/img/peeking-cat.png" id="demo2-cat" alt="Katt som kikar">
+      </div>
+
+    </section>
+
+    <section class="anim-demo">
+      <h2>Exempel 3: Katt som springer</h2>
+      <p>Här används olika keyframes-regler och spritesheets för att flytta katt-elementet och dess bakgrundsbild.<br>Javascript används för att byta css-klasser på kattens element när knappen trycks.<br>Två keyframes-regler används för att flytta bakgrundsbilden till rätt plats, så animeringen byter bild, beroende på om katten väntar eller springer. En tredje keyframes-regel flyttar katt-elementet åt höger inom behållaren.<br>Animeringen tar 4 sekunder oavsett skärmstorlek och behållarens bredd är dynamisk med flex-grow.<br>Skillnad i elementets bredd leder till att det ser ut som att katten springer snabbare på större skärmar.</p>
+
+      <div id="demo3-container">
+        <button id="demo3-run">Skicka iväg katten</button>
+        <div id="demo3-area">
+          <div id="demo3-cat" class="idle"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="anim-demo">
+      <h2>Exempel 4: Tidigare användning</h2>
+      <p>På sidan "Lab 3" använde jag transform för att öka skalan på bildena när de klickas eller vid hover.</p>
+    </section>
+
+  </main>
+</body>
+
+</html>
