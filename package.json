@@ -11,5 +11,9 @@
   "devDependencies": {
     "sass": "^1.97.3",
     "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "jsdoc": "^4.0.5"
   }
 }
